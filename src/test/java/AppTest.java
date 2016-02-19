@@ -32,4 +32,13 @@ public class AppTest extends FluentTest {
     submit(".btn");
     assertThat(pageSource()).contains("Your addition has been saved.");
   }
+
+  @Test
+  public void wordIsDisplayedTest() {
+    goTo("http://localhost:4567/words/new");
+    fill("#name").with("cool");
+    submit(".btn");
+    click("a", withText("View Word List"));
+    assertThat(pageSource()).contains("cool");
+  }
 }
