@@ -18,4 +18,10 @@ public class DefinitionTest {
     Definition myDefinition = new Definition("of or at a fairly low temperature.");
     assertEquals("of or at a fairly low temperature.", myDefinition.getDefinition());
  }
+
+ @Test
+  public void getCreatedAt_instantiatesWithCurrentTime_today() {
+  Definition myDefinition = new Definition("of or at a fairly low temperature.");
+    assertEquals(LocalDateTime.now().getDayOfWeek(), myDefinition.getCreatedAt().getDayOfWeek());
+ }
 }
