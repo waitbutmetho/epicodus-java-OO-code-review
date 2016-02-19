@@ -44,7 +44,7 @@ public class AppTest extends FluentTest {
 
   @Test
   public void wordDefinitionsFormIsDisplayed() {
-    goTo("http://localhost:4567/categories/new");
+    goTo("http://localhost:4567/words/new");
     fill("#name").with("cool");
     submit(".btn");
     click("a", withText("View Word List"));

@@ -1,0 +1,15 @@
+word-definitions-form.vtl
+
+<h1>Add a Definition to $word.getWord() </h1>
+
+<form action="/definitions" method="post">
+
+  <input id="wordId" type="hidden" name="wordId" value="$word.getId()">
+
+  <div class="form-group">
+    <label for="definition">Add</label>
+    <input id="definition" type="text" name="definition" class="form-control">
+  </div>
+
+  <button type="submit" class="btn btn-success" >Add Definition</button>
+</form>
