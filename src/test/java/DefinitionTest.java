@@ -32,4 +32,10 @@ public class DefinitionTest {
      assertTrue(Definition.all().contains(firstDefinition));
      assertTrue(Definition.all().contains(secondDefinition));
    }
+
+   @Test
+  public void newId_definitionsInstantiateWithAnID_true() {
+    Definition myDefinition = new Definition("of or at a fairly low temperature.");
+    assertEquals(Definition.all().size(), myDefinition.getId());
+  }
 }
