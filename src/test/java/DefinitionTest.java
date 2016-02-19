@@ -45,4 +45,9 @@ public class DefinitionTest {
     Definition secondDefinition = new Definition("having a high degree of heat or a high temperature.");
     assertEquals(Definition.find(secondDefinition.getId()), secondDefinition);
   }
+
+  @Test
+  public void find_returnsNullWhenNoTaskFound_null() {
+    assertTrue(Definition.find(999) == null);
+  }
 }
