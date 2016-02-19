@@ -26,7 +26,7 @@ public class DefinitionTest {
  }
 
   @Test
-  public void all_returnsAllInstancesOfTask_true() {
+  public void all_returnsAllInstancesOfDefinition() {
      Definition firstDefinition = new Definition("of or at a fairly low temperature.");
      Definition secondDefinition = new Definition("having a high degree of heat or a high temperature.");
      assertTrue(Definition.all().contains(firstDefinition));
