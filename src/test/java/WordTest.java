@@ -9,4 +9,11 @@ public class WordTest {
     Word testWord = new Word("cool");
     assertEquals("cool", testWord.getWord());
   }
+
+  @Test
+	public void getId_returnsWordsId() {
+		Word testWord = new Word("cool");
+		assertTrue(Word.all().size() == testWord.getId());
+	}
+
 }
