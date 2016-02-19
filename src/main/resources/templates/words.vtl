@@ -1,0 +1,6 @@
+words.vtl
+<h1>Words</h1>
+
+#foreach($word in $words)
+ <h3><a href="/words/$word.getId()">$word.getWord()</a></h3>
+#end

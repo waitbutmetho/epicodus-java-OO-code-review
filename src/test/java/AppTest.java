@@ -41,4 +41,15 @@ public class AppTest extends FluentTest {
     click("a", withText("View Word List"));
     assertThat(pageSource()).contains("cool");
   }
+
+  @Test
+  public void wordDefinitionsFormIsDisplayed() {
+    goTo("http://localhost:4567/categories/new");
+    fill("#name").with("cool");
+    submit(".btn");
+    click("a", withText("View Word List"));
+    click("a", withText("cool"));
+    click("a", withText("Add a new Definition"));
+    assertThat(pageSource()).contains("Add a Definition to cool");
+  }
 }
