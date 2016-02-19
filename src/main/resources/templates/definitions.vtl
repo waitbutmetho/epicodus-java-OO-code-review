@@ -1,0 +1,10 @@
+definitions.vtl
+
+<h1> All Definitions </h1>
+
+<ul>
+#foreach ($definition in $definitions)
+<li><a href="/definitions/$definition.getId()">$task.getDefinition()</a></li>
+#end
+</ul>
+<a href="/definition/new">Add New Definition</a>

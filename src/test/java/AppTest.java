@@ -52,4 +52,17 @@ public class AppTest extends FluentTest {
     click("a", withText("Add a new Definition"));
     assertThat(pageSource()).contains("Add a Definition to cool");
   }
+
+  @Test
+  public void defintionsAreAddedAndDisplayed() {
+    goTo("http://localhost:4567/words/new");
+    fill("#name").with("cool");
+    submit(".btn");
+    click("a", withText("View Word List"));
+    click("a", withText("cool"));
+    click("a", withText("Add a new Definition"));
+    fill("#definition").with("of or at a fairly low temperature.");
+    submit(".btn");
+    assertThat(pageSource()).contains("of or at a fairly low temperature.");
+  }
 }
