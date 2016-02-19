@@ -31,5 +31,5 @@ public class DefinitionTest {
      Definition secondDefinition = new Definition("having a high degree of heat or a high temperature.");
      assertTrue(Definition.all().contains(firstDefinition));
      assertTrue(Definition.all().contains(secondDefinition));
-  }
+   }
 }
