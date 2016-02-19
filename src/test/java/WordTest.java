@@ -20,6 +20,14 @@ public class WordTest {
   public void getDefinitions_initiallyReturnsEmptyArrayList() {
     Word testWord = new Word("cool");
     assertTrue(testWord.getDefinitions() instanceof ArrayList);
-}
+  }
+
+  @Test
+	public void all_returnsAllInstanceOfTask_true() {
+		Word firstWord = new Word("cool");
+		Word secondWord = new Word("cool");
+		assertTrue(Word.all().contains(firstWord));
+		assertTrue(Word.all().contains(secondWord));
+	}
 
 }
