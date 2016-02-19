@@ -24,4 +24,12 @@ public class DefinitionTest {
   Definition myDefinition = new Definition("of or at a fairly low temperature.");
     assertEquals(LocalDateTime.now().getDayOfWeek(), myDefinition.getCreatedAt().getDayOfWeek());
  }
+
+  @Test
+  public void all_returnsAllInstancesOfTask_true() {
+     Definition firstDefinition = new Definition("of or at a fairly low temperature.");
+     Definition secondDefinition = new Definition("having a high degree of heat or a high temperature.");
+     assertTrue(Definition.all().contains(firstDefinition));
+     assertTrue(Definition.all().contains(secondDefinition));
+  }
 }
