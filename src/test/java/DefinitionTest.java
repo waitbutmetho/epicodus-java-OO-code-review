@@ -38,4 +38,11 @@ public class DefinitionTest {
     Definition myDefinition = new Definition("of or at a fairly low temperature.");
     assertEquals(Definition.all().size(), myDefinition.getId());
   }
+
+  @Test
+  public void find_returnsDefinitionWithSameId_secondTask() {
+    Definition firstDefinition = new Definition("of or at a fairly low temperature.");
+    Definition secondDefinition = new Definition("having a high degree of heat or a high temperature.");
+    assertEquals(Definition.find(secondDefinition.getId()), secondDefinition);
+  }
 }
