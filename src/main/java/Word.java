@@ -26,6 +26,8 @@ public class Word {
 		return mDefinitions;
 	}
 
+  
+
   public static ArrayList<Word> all() {
 		return instances;
 	}

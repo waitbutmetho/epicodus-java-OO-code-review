@@ -43,4 +43,12 @@ public class WordTest {
     assertEquals(Word.find(testWord.getId()), testWord);
   }
 
+  @Test
+  public void addDefinition_addsDefinitionToList() {
+    Word testWord = new Word("cool");
+    Definition testDefinition = new Definition("of or at a fairly low temperature.");
+    testWord.addDefinition(testDefinition);
+    assertTrue(testWord.getDefinitions().contains(testDefinition));
+  }
+
 }
