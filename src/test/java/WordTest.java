@@ -23,11 +23,18 @@ public class WordTest {
   }
 
   @Test
-	public void all_returnsAllInstanceOfTask_true() {
+	public void all_returnsAllInstanceOfWord_true() {
 		Word firstWord = new Word("cool");
 		Word secondWord = new Word("cool");
 		assertTrue(Word.all().contains(firstWord));
 		assertTrue(Word.all().contains(secondWord));
+	}
+
+  @Test
+	public void clear_removesAllWordInstancesFromMemory() {
+		Word testWord = new Word("cool");
+		Word.clear();
+		assertEquals(Word.all().size(), 0);
 	}
 
 }
