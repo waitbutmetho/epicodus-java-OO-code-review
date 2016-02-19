@@ -37,4 +37,10 @@ public class WordTest {
 		assertEquals(Word.all().size(), 0);
 	}
 
+  @Test
+  public void find_returnsWordWithSameId() {
+    Word testWord = new Word("cool");
+    assertEquals(Word.find(testWord.getId()), testWord);
+  }
+
 }

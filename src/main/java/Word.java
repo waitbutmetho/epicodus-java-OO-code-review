@@ -33,4 +33,6 @@ public class Word {
   public static void clear() {
 		instances.clear();
 	}
+
+
 }
