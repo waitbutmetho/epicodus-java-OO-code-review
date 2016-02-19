@@ -50,4 +50,12 @@ public class DefinitionTest {
   public void find_returnsNullWhenNoTaskFound_null() {
     assertTrue(Definition.find(999) == null);
   }
+
+
+  @Test
+  public void clear_emptiesAllDefinitionsFromArrayList() {
+    Definition myDefinition = new Definition("of or at a fairly low temperature.");
+    Definition.clear();
+    assertEquals(Definition.all().size(), 0);
+  }
 }
