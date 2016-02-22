@@ -1,6 +1,8 @@
 import org.fluentlenium.adapter.FluentTest;
 import org.junit.ClassRule;
 import org.junit.Test;
+import org.junit.*;
+import static org.junit.Assert.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
@@ -8,7 +10,7 @@ import static org.fluentlenium.core.filter.FilterConstructor.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class AppTest extends FluentTest {
-  public WebDriver webDriver = new HtmlUnitDriver();
+  public WebDriver webDriver = new HtmlUnitDriver(true);
 
   @Override
   public WebDriver getDefaultDriver() {
@@ -17,6 +19,9 @@ public class AppTest extends FluentTest {
 
   @ClassRule
   public static ServerRule server = new ServerRule();
+
+  @Rule
+  public ClearRule clearRule = new ClearRule();
 
   @Test
   public void rootTest() {
@@ -48,6 +53,7 @@ public class AppTest extends FluentTest {
     fill("#name").with("cool");
     submit(".btn");
     click("a", withText("View Word List"));
+    await().atMost(100).untilPage().isLoaded();
     click("a", withText("cool"));
     click("a", withText("Add a new Definition"));
     assertThat(pageSource()).contains("Add a Definition to cool");
